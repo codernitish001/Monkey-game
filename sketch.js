@@ -44,7 +44,7 @@ function draw() {
   }
   // -----------------------------------
   if(gameState==="START"&&keyWentDown("space")){
-    gameState="PLAY"
+    gameState="PLAY";
   }
   // -----------------------------------
   if(gameState==="PLAY"){
@@ -72,7 +72,9 @@ function draw() {
     oGroup.setLifetimeEach(-1);
     bGroup.setLifetimeEach(-1);
     monkey.visible=false;
-    text("PRESS R TO RESTART",200,200)
+    text("PRESS R TO RESTART",200,200);
+    bGroup.destroyEach();
+    oGroup.destroyEach();
  }
 //  -----------------------------------
   if(gameState==="OVER"&&keyWentDown("r")){
@@ -81,7 +83,7 @@ function draw() {
   }
   // ----------------------------------
   textSize(20);
-  text("SCROE : "+score,40,50);
+  text("SCORE : "+score,40,50);
   drawSprites();
 }
 
